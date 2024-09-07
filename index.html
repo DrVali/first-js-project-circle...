@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>A cool Photo Grid </title>
+</head>
+<body dir="rtl">
+   <p style="margin:15px; padding:10px;">  با سلام هم به صورت کنسول و هم به صورت گرافیکی پروژه انجام شد.
+خداقوت   </p>
+   <div class="mostatil-group" > 
+    
+  <span> مساحت مستطیل را وارد کنید   </span> <input type="number" id="num1" style="border:2px solid #000;"/> <br />
+    <span>   محیط مستطیل را وارد کنید    </span>  <input type="number" id="num2" style="border:2px solid #000;"/ /> <br />
+    <input class="btn" type="button" value=" محاسبه  مستطیل" onclick="masahatmostatil1();" />
+	
+	</br>
+	<span> مساحت مستطیل :   </span>
+	<span id="masahatmostatil">  ......  </span>
+	</br>
+	<span> محیط مستطیل  :   </span>
+	<span id="mohitmostatil"> ...... </span>
+    
+	</div>
+
+
+	  <!-------    دایره  ----->
+	
+	<div class="circle-group" > 
+    
+  <span> شعاع دایره را وارد کنید   </span> <input type="number" id="shoaa" style="border:2px solid #000;"/> <br />
+   
+    <input class="btn" type="button" value=" محاسبه دایره " onclick="circle1();" />
+	
+	</br>
+	<span>مساحت دایره :     </span>
+	<span id="masahatcircle">  ......  </span>
+	</br>
+	<span> محیط دایره    </span>
+	<span id="mohitcircle"> ...... </span>
+    
+	</div>
+	 <!-------  ذوزنقه ----->
+		<div class="zozanaghe-group" > 
+    
+  <span> ارتفاع ذوزنقه   </span> <input type="number" id="h" style="border:2px solid #000;"/> <br />
+  <span> قاعده بزرگ   </span> <input type="number" id="ghl" style="border:2px solid #000;"/> <br />
+  <span> قاعده کوچک   </span> <input type="number" id="ghs" style="border:2px solid #000;"/> <br />
+  <span> ضلع اول   </span> <input type="number" id="z1" style="border:2px solid #000;"/> <br />
+   <span> ضلع دوم :    </span> <input type="number" id="z2" style="border:2px solid #000;"/> <br />
+    <input class="btn" type="button" value="  محاسبه ذوزنقه  " onclick="zozanaghe1();" />
+	
+	</br>
+	<span>مساحت ذوزنقه     </span>
+	<span id="masahatz1">  ......  </span>
+	</br>
+	<span> محیط ذوزنقه :    </span>
+	<span id="mohitz1"> ...... </span>
+    
+	</div>
+	 
+	 
+	
+	<script>
+	 /************  by console*****************/
+	   var tolm= 10;
+	   var arzm= 18;
+	   
+	   var mohit =  tolm * arzm;
+	   var masahat =(tolm + arzm) *2;
+	   
+	 
+	   
+	  
+	    console.log("tol = 10 and arz = 18 ");
+	    console.log(" mohit mostatil  = " + mohit);
+	    console.log(" masahat mostatil  = " + masahat);
+		  console.log("============================= ");
+		   var shoaa1= 8;
+	   var mohit_circle= 2 * shoaa1 *3.14;
+	   var masahat_circle= shoaa1 * shoaa1 * 3.14;
+	    console.log("shoaa circle is = 8 ");
+		console.log(" masahat circle  = " + masahat_circle);
+		console.log(" mohit circle  = " + mohit_circle);
+		  
+		   console.log("============================= ");
+		var ertefa=5;
+	   var smalg= 6;
+	   var largeg= 9;
+	   var zel1=6;
+	   var zel2= 6;
+	   var mohit_zozanaghe=largeg +smalg +zel1 +zel2 ;
+	   var masahat_zozanaghe= ((smalg + largeg ) / 2 ) * ertefa;
+		   console.log(" ertefa is : 5  and smalg : 6 and largeg = 9 and zel1, zel2 = 6   " );
+		   console.log(" mohit zozanaghe  = " + mohit_zozanaghe);
+		  console.log(" masahat zozanaghe  = " + masahat_zozanaghe);
+		  
+		  
+		  /*****************************/
+		  
+		  
+		  
+		  
+		 
+		 function masahatmostatil1() {
+		 
+		 var lbl = document.getElementById("masahatmostatil");
+		 var lbl2=document.getElementById("mohitmostatil");
+      var num1 = document.getElementById("num1").value;
+      var num2 = document.getElementById("num2").value;
+
+      num1=parseInt(num1);
+      num2=parseInt(num2);
+
+      var masahat = num1 * num2;
+	  var mohit = (num1 +num2 ) * 2;
+      lbl.innerHTML = masahat;
+	  lbl2.innerHTML = mohit;
+	  
+    }
+	
+	
+	 /***************circle function**************/
+	 function circle1(){
+	  var lbl = document.getElementById("masahatcircle");
+		 var lbl2=document.getElementById("mohitcircle");
+      var num1 = document.getElementById("shoaa").value;
+      
+
+      num1=parseInt(num1);
+      
+
+      var masahat = num1 * num1 * 3.14;
+	  var mohit = 2 * num1 *3.14;
+      lbl.innerHTML = masahat;
+	  lbl2.innerHTML = mohit;
+	 }
+	 
+	 
+	 
+	 /***************zozanaghe function**************/
+	 
+	 
+	 
+	 
+	 
+	  function zozanaghe1() {
+		  var lbl = document.getElementById("masahatz1");
+		 var lbl2=document.getElementById("mohitz1");
+		 
+		 
+        var num1 = document.getElementById("ghs").value;
+        var num2 = document.getElementById("z1").value;
+        var num3 = document.getElementById("z2").value;
+		var num4= document.getElementById("ghl").value;
+		var num5 = document.getElementById("h").value;
+		
+      num1=parseInt(num1);
+      num2=parseInt(num2);
+      num3=parseInt(num3);
+      num4=parseInt(num4);
+      var h=parseInt(num5);
+      var masahatz =  h * ((num4+num1)/2);
+	  var mohitz = num1+num2+num3+num4 ;
+       console.log(mohitz); 
+       lbl.innerHTML = masahatz;
+	   lbl2.innerHTML = mohitz;
+	  
+    }
+	</script>
+</body>
+</html>
